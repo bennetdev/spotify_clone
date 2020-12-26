@@ -24,7 +24,7 @@ echo '
         foreach ($recently_played->items as $recent) { echo '
             <div class="album">
                 <div class="cover hover-play" style="background-image: url('. $recent->track->album->images[0]->url  . ')">
-                    <span class="material-icons play-icon md-48 play-arrow">play_arrow</span>
+                    <a href="playalbum?id=' .$recent->track->album->id . '" class="play-album material-icons play-icon md-48 play-arrow">play_arrow</a>
                 </div>
                 <a href="album.php?id=' . $recent->track->album->id .'"><h4 class="name">'. $recent->track->album->name . '</h4></a>
                 <p class="artist">' . $recent->track->album->artists[0]->name . '</p>
@@ -41,7 +41,7 @@ echo '
         foreach ($playlists->items as $playlist) { echo '
             <div class="album">
                 <div class="cover hover-play" style="background-image: url('. $playlist->images[0]->url  . ')">
-                    <span class="material-icons play-icon md-48 play-arrow">play_arrow</span>
+                    <a href="playplaylist?id=' .$playlist->id . '" class="play-playlist material-icons play-icon md-48 play-arrow">play_arrow</a>
                 </div>
                 <a href="playlist.php?id=' . $playlist->id .'"><h4 class="name">' . $playlist->name . '</h4></a>
             </div>';
@@ -57,7 +57,7 @@ echo '
         foreach ($artist_albums->items as $album) { echo '
             <div class="album">
                 <div class="cover hover-play" style="background-image: url('. $album->images[1]->url  . ')">
-                    <span class="material-icons play-icon md-48 play-arrow">play_arrow</span>
+                    <a href="playalbum?id=' .$album->id . '" class="play-album material-icons play-icon md-48 play-arrow">play_arrow</a>
                 </div>
                 <a href="album.php?id=' . $album->id .'"><h4 class="name">' . $album->name . '</h4></a>
                 <p class="artist">' . $album->artists[0]->name . '</p>

@@ -3,6 +3,9 @@
     require "partials/scripts/utils.php";
 
     session_start();
+    if(!isset($_SESSION["accessToken"])){
+        header("Location: partials/scripts/login.php");
+    }
     $api = new SpotifyWebAPI\SpotifyWebAPI();
     $api->setAccessToken($_SESSION["accessToken"]);
     $_SESSION["api"] = $api;
