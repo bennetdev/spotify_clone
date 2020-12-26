@@ -1,0 +1,322 @@
+$dark_color: #121212
+$light4_color: #cecece
+$light1_color: #1c1c1c
+$light2_color: #242424
+$light3_color: #333333
+$sidebar_width: 200px
+$green_color: #61bd4f
+
+body
+  font-family: "Roboto", serif
+  font-weight: 400
+  font-size: 1.1rem
+  background-color: $light1_color
+  color: $light4_color
+  overflow: hidden
+
+a
+  text-decoration: none
+  color: inherit
+
+.active
+  color: $green_color !important
+
+.content
+  margin-left: $sidebar_width + 15
+  margin-top: 48px
+  height: calc(100vh - 90px - 36px)
+  overflow-y: auto
+  overflow-x: hidden
+
+hr
+  border: 1px solid $light3_color
+
+#sidebar
+  background-color: $dark_color
+  height: 100%
+  width: $sidebar_width
+  position: absolute
+  top: 0
+  left: 0
+  font-weight: 600
+  .navigation
+    overflow-y: auto
+    overflow-x: hidden
+    height: calc(100% - 80px - 200px)
+  a
+    text-decoration: none
+    display: block
+    color: $light4_color
+    padding: 8px 8px 8px 24px
+    font-size: 1rem
+    &:hover
+      color: white
+  .section
+    margin-top: 40px
+    h7
+      margin-left: 16px
+
+#account
+  float: right
+  top: 12px
+  right: 100px
+  margin-right: 15px
+  cursor: pointer
+  text-decoration: none
+  color: $light4_color
+
+#topbar
+  position: fixed
+  top: 0
+  left: 0
+  width: calc(100vw - 220px)
+  margin-left: $sidebar_width + 20
+  background-color: $light1_color
+
+  #query
+    border-radius: 20px
+    height: 28px
+
+#player
+  width: 100%
+  background-color: $light2_color
+  display: flex
+  position: absolute
+  left: 0
+  bottom: 0
+  height: 80px
+  justify-content: center
+  flex-direction: column
+
+  #controls
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+  #player-time
+    display: flex
+    justify-content: center
+    align-items: center
+
+  #player-bar
+    cursor: pointer
+    width: 600px
+    height: 5px
+    background-color: $light3_color
+    margin-left: 12px
+    margin-right: 12px
+    display: inline-block
+    border-radius: 12px
+
+    &:hover
+      #time-passed
+        background-color: $green_color
+
+    #time-passed
+      background-color: $light4_color
+      width: 0%
+      height: 5px
+      border-radius: 12px
+
+  #infos
+    position: absolute
+    top: 0
+    left: 15px
+
+    .title
+      margin: 10px 0 8px 0
+
+    .artist
+      font-size: 1rem
+
+
+  p
+    font-weight: 400
+    font-size: 1.1rem
+    display: inline-block
+    margin: 0
+    color: $light4_color
+
+  .play-icon
+    margin: 12px
+
+.play-icon
+  cursor: pointer
+  color: $light4_color
+
+  &:hover
+    color: white
+
+#player-cover
+  height: 200px
+  width: 200px
+  position: absolute
+  bottom: 80px
+  background-size: contain
+  border-top: 2px solid $light3_color
+
+.preview
+  .navigate
+    float: right
+
+    span
+      cursor: pointer
+
+    .before
+      opacity: 0.6
+
+.cover
+  height: 300px
+  width: 300px
+  border-radius: 2px
+  display: flex
+  justify-content: center
+  align-items: center
+
+.preview
+  .albums
+    display: flex
+    transition: margin-left 1s
+
+    .album
+      margin-right: 25px
+
+      .name
+        margin: 10px 0 8px 0
+        color: $light4_color
+
+      .artist
+        color: $light4_color
+        font-size: 1rem
+        margin: 0
+
+.artist-avatar
+  border-radius: 50%
+
+.hover-play
+  background-size: contain
+
+  .play-arrow
+    display: none
+
+  &:hover
+    opacity: 0.5
+
+    .play-arrow
+      display: block
+
+.gridview
+  display: flex
+  flex-wrap: wrap
+
+  > div
+    flex-basis: 50%
+    flex-shrink: 0
+
+    > div
+      margin-top: 20px
+      display: flex
+      height: 64px
+
+      a
+        text-decoration: none
+        color: inherit
+
+      .names
+        display: flex
+        justify-content: center
+        flex-direction: column
+
+        .title
+          margin: 0
+
+        .subtitle
+          margin: 0
+
+      .hover-play
+        float: left
+        clear: both
+        height: 64px
+        width: 64px
+        margin-right: 15px
+
+.detail
+  .infos
+    display: flex
+    align-items: center
+
+  .facts
+    margin-left: 20px
+
+    .title
+      font-weight: bolder
+      font-size: 2.5em
+
+.tracklist
+  margin-top: 50px
+  width: 100%
+  border-collapse: collapse
+  a
+    &:hover
+      text-decoration: underline
+  th, td
+    border-bottom: 1px solid $light3_color
+  th
+    text-align: left
+    padding-bottom: 20px
+    opacity: 0.8
+  tr
+    &:hover
+      .play-track
+        visibility: visible
+  td
+    vertical-align: middle
+    .number
+      margin: 0
+    .subtitle
+      font-size: 0.9rem
+      opacity: 0.8
+    .trackname
+      display: flex
+      align-items: center
+    .tracktime
+      margin: 0
+    .artistname .name
+      margin: 0
+    .albumname .name
+      margin: 0
+    .play-track
+      text-decoration: none
+      visibility: hidden
+
+
+
+
+//Flexbox
+.break
+  flex-basis: 100%
+  height: 0
+
+//Icons
+.md-36
+  font-size: 36px
+
+.md-48
+  font-size: 48px
+
+.md-20
+  opacity: 0.7
+  font-size: 21px
+
+//Scrollbar
+::-webkit-scrollbar
+  width: 15px
+
+::-webkit-scrollbar-track
+  background: $light1_color
+
+::-webkit-scrollbar-thumb
+  background: $light3_color
+  &:hover
+    background: #555
